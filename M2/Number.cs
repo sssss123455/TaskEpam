@@ -7,7 +7,7 @@ namespace M2
 {
     public  class Number
     {
-        public int InsertNumber(int firstNumber,int secondNumber,int i,int j)
+        public static int InsertNumber(int firstNumber,int secondNumber,int i,int j)
         {
             if (i <= j)
             {
