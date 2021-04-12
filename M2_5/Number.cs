@@ -8,50 +8,50 @@ namespace M2_5
     {
         public static long FindNextBiggerNumber(int number)
         {
-            long nextBiggerNumber = -1;
-            List<int> list = new List<int>();
-            int index = -1;
-            string numString = null;
-            //char[] n = number.ToString().ToArray();
-            List<int> helperList = new List<int>();
-            while (number > 0)
+            bool flag = false;
+            char[] num = number.ToString().ToArray();
+            List<char> helpList = new List<char>();
+            int newnumber = 0;
+            int begin = num.Count() - 1;
+            char numHelp;
+            string text = null;
+            for (int i = begin; i > -1; i--)
             {
-                list.Add(number % 10);
-                number = number / 10;
-            }
-            list.Reverse();
-            for (int i = list.Count() - 1; i > 0; i--)
-            {
-                if (list[i] > list[i - 1])
+                for (int j = begin; j > -1; j--)
                 {
-                    int num = list[i];
-                    list[i] = list[i - 1];
-                    list[i - 1] = num;
-                    index = i;
+                    if (i < j && num[i] < num[j])
+                    {
+                        numHelp = num[i];
+                        num[i] = num[j];
+                        num[j] = numHelp;
+                        flag = true;
+                        for (int k = begin; k > i; k--)
+                        {
+                            helpList.Add(num[k]);
+                        }
+                        var newList = helpList.OrderBy(f => f);
+                        for (int k = 0; k <= i; k++)
+                        {
+                            text += num[k];
+                        }
+                        for (int k = 0; k < newList.Count(); k++)
+                        {
+                            text += newList.ElementAt(k);
+                        }
+                        break;
+                    }
+                }
+                if (flag == true)
+                {
                     break;
                 }
             }
-            if (index > -1)
+            newnumber = Convert.ToInt32(text);
+            if (newnumber <= number)
             {
-                for (int i = list.Count() - 1; i >= index; i--)
-                {
-                    helperList.Add(list[i]);
-                }
-                for (int i = 0; i < index; i++)
-                {
-                    numString += list[i];
-                }
-                foreach (var item in helperList.OrderBy(x => x))
-                {
-                    numString += item;
-                }
-                Console.WriteLine(numString);
-                if (Convert.ToInt64(numString.ToString()) > number)
-                {
-                    nextBiggerNumber = Convert.ToInt64(numString.ToString());
-                }
+                newnumber = -1;
             }
-            return nextBiggerNumber;
+            return newnumber;
         }
     }
 }
