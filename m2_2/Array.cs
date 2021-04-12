@@ -6,17 +6,25 @@ namespace m2_2
 {
     public class Array
     {
-        public  int GetMaxNumber(int[] array)
+        public static  int GetMaxNumber(int[] array,int i,int maxNumber)
         {
-            int maxNumber = array[0];
-            foreach (var item in array)
+
+            if (i == array.Length)
             {
-                if (item>maxNumber)
+                return maxNumber;
+            }
+            else
+            {
+                if (maxNumber<array[i])
                 {
-                    maxNumber = item;
+                    return GetMaxNumber(array, i + 1, array[i]);
+                }
+                else
+                {
+                    return GetMaxNumber(array, i + 1, maxNumber);
                 }
             }
-            return maxNumber;
         }
+       
     }
 }

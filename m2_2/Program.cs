@@ -6,9 +6,9 @@ namespace m2_2
     {
         static void Main(string[] args)
         {
-            Array array = new Array();
-            var example = array.GetMaxNumber(new int[] { 3, 2, 4, 7, 89, 1 });
-            Console.WriteLine(example);
+            int[] array = new int[] { 3, 2, 4, 7, 89, 1 };
+          
+            Console.WriteLine(Array.GetMaxNumber(array,0,int.MinValue));
         }
     }
 }

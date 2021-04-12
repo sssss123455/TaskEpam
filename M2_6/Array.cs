@@ -12,10 +12,11 @@ namespace M2_6
             List<int> list = new List<int>();
             for (int i = 0; i < array.Length; i++)
             {
-                List<int> helperList = GetListOfNumber(array[i]);
-                foreach (var item in helperList)
+                //List<int> helperList = GetListOfNumber(array[i]);
+                char[] n = array[i].ToString().ToArray();
+                foreach (var item in n)
                 {
-                    if (item==number)
+                    if (Convert.ToInt32(item.ToString())==number)
                     {
                         list.Add(array[i]);
                     }
@@ -23,15 +24,15 @@ namespace M2_6
             }
             return list;
         }
-        private static List<int> GetListOfNumber(int num)
-        {
-            List<int> list = new List<int>();
-            while (num > 0)
-            {
-                list.Add(num % 10);
-                num = num / 10;
-            }
-            return list;
-        }
+        //private static List<int> GetListOfNumber(int num)
+        //{
+        //    List<int> list = new List<int>();
+        //    while (num > 0)
+        //    {
+        //        list.Add(num % 10);
+        //        num = num / 10;
+        //    }
+        //    return list;
+        //}
     }
 }

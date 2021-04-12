@@ -1,12 +1,12 @@
 ﻿using System;
 
-namespace M2_4
+namespace M4_1
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(Text.GetString("a33sd","asdff"));
+            Console.WriteLine("Hello World!");
         }
     }
 }

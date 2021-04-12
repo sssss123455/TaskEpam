@@ -8,7 +8,7 @@ namespace M2_5
         {
             System.Diagnostics.Stopwatch swatch = new System.Diagnostics.Stopwatch();
             swatch.Start();
-            Console.WriteLine(Number.FindNextBiggerNumber(1234126));
+            Console.WriteLine(Number.FindNextBiggerNumber(305551));
             swatch.Stop();
             Console.WriteLine("Время на выполнение: "+swatch.Elapsed);
         }

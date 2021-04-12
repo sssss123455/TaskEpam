@@ -1,4 +1,5 @@
 ﻿using System;
+using MyLibrary;
 
 namespace M1
 {
@@ -9,6 +10,7 @@ namespace M1
             Person person = new Person();
             Console.WriteLine("Hi");
             person.GetMessage();
+            MyLibraary.ShowMessage();
         }
     }
 }
