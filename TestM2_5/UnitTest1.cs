@@ -15,7 +15,7 @@ namespace TestM2_5
         [TestCase(3456432, ExpectedResult = 3462345)]
         [TestCase(10, ExpectedResult = -1)]
         [TestCase(20, ExpectedResult = -1)]
-        public static int FindNextBiggerNumber(int number)
+        public static long FindNextBiggerNumber(int number)
         {
             return M2_5.Number.FindNextBiggerNumber(number);
         }

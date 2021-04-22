@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 
 namespace M4_1
 {
@@ -6,7 +7,9 @@ namespace M4_1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine(double.Epsilon.GetIEEE754());
         }
+       
     }
+
 }
