@@ -35,6 +35,27 @@ namespace M4_1
            
             return number.PadLeft(count, '0');
         }
+        public static char[]  GetIEEE754Two(this double num)
+        {
+            var unit_d = DoubleToInt64Bits(num);
+            char[] str = new char[64];
+            for (var i = 0; i < 64; i++)
+            {
+                if (((unit_d >> i) & 0b01) == 1)
+                {
+                    str[64 - i - 1] = '1';
+                }
+                else
+                {
+                    str[64 - i - 1] = '0';
+                }
+            }
+            return str;
+        }
+        public unsafe static long DoubleToInt64Bits(double value)
+        {
+            return *(long*)(&value);
+        }
     }
 } 
 
