@@ -30,10 +30,11 @@ namespace M7_2
                     words[i] = textInfo.ToTitleCase(words[i]);
                 }
             }
-            foreach (var item in words)
-            {
-                finishedText += item + " ";
-            }
+            finishedText=string.Join(" ", words);
+            //foreach (var item in words)
+            //{
+            //    finishedText += item + " ";
+            //}
             Console.WriteLine(finishedText);
             return finishedText;
         }

@@ -6,7 +6,7 @@ namespace M7_6
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(Number.GetSumBigNumbers(new string[] { "23", "123", "100", "42", "13" }));
+             Console.WriteLine(Number.GetSumBigNumbers("111111", "11111111111111111111999999999999999"));
         }
     }
 }

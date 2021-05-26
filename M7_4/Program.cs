@@ -8,7 +8,7 @@ namespace M7_4
         static void Main(string[] args)
         {
             
-           Element.UniqueInOrder("12233");
+           Element.UniqueInOrder("21333333334444432111111");
         }   
     }
 }

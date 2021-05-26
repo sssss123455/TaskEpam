@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Text;
 using System.Linq;
 
 namespace M7_4
@@ -16,7 +15,17 @@ namespace M7_4
             {
                 list.Add((object)value.Current);
             }
-            list=list.Distinct().ToList();
+            for (int i = 1; i < list.Count(); i++)
+            {
+                while (list[i].ToString() == list[i - 1].ToString() && i!=list.Count()-1)
+                {
+                    list.RemoveAt(i);
+                }
+                if (list[i].ToString() == list[i - 1].ToString()&& i == list.Count() - 1)
+                {
+                    list.RemoveAt(i);
+                }
+            }
             foreach (var item in list)
             {
                 Console.WriteLine(item);

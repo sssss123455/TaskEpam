@@ -23,22 +23,22 @@ namespace M7_1
             switch (num)
             {
                 case 1:
-                    answer=(text + customer.Name + "," + customer.Revenue);
+                    answer =$"{text}{customer.Name },{customer.Revenue}";
                     break;
                 case 2:
-                    answer=(text + customer.Name + "," + customer.ContactPhone);
+                    answer= $"{text}{customer.Name },{customer.ContactPhone}";
                     break;
                 case 3:
-                    answer=(text + customer.ContactPhone + "," + customer.Revenue);
+                    answer= $"{text}{customer.ContactPhone},{customer.Revenue}"; 
                     break;
                 case 4:
-                    answer=(text + customer.Name );
+                    answer= $"{text}{customer.Name}";
                     break;
                 case 5:
-                    answer=(text + customer.Revenue);
+                    answer= $"{text}{customer.Revenue}";
                     break;
                 default:
-                    answer=(text + customer.Name + "," + customer.ContactPhone + "," + customer.Revenue);
+                    answer= $"{text}{customer.Name },{customer.ContactPhone},{customer.Revenue}";
                     break;
             }
             return answer;

@@ -12,10 +12,11 @@ namespace M7_5
             string reverseWords = null;
             string[] arrayWords = words.Split(" ");
             arrayWords=arrayWords.Reverse().ToArray();
-            foreach (var item in arrayWords)
-            {
-                reverseWords += item + " ";
-            }
+            reverseWords = string.Join(" ", arrayWords);
+            //foreach (var item in arrayWords)
+            //{
+            //    reverseWords += item + " ";
+            //}
             return reverseWords;
         }
     }
