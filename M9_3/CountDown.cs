@@ -5,14 +5,46 @@ using System.Threading;
 
 namespace M9_3
 {
-    public class CountDown
+    public class Countdown
     {
-        public delegate void Method();
-        public event Method onCount;
-        public void Count()
+        private bool Flag;
+        public event EventHandler<CheckPoint> CheckPoints;
+        public event EventHandler StartRun;
+        public void Run()
         {
-            Thread.Sleep(9000);
-            onCount();  
+            Start();
+            for (int i = 0; i < 100; i++)
+            {
+                if (i % 10 == 0)
+                {
+                    Point(new CheckPoint {Num=i,Flag=false });
+                }
+
+                if (Flag)
+                {
+                    break;
+                }
+            }
         }
+        protected virtual void Start()
+        {
+            StartRun?.Invoke(this, null);
+        }
+        protected virtual void Point(CheckPoint point)
+        {
+            if (point==null)
+            {
+                throw new ArgumentNullException();
+            }
+            CheckPoints?.Invoke(this, point);
+            Flag = point.Flag;
+
+        }
+
+    }
+    public class CheckPoint:EventArgs
+    {
+        public int Num { get; set;  } 
+        public bool Flag { get; set; }
     }
 }

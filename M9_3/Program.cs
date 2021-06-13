@@ -6,12 +6,24 @@ namespace M9_3
     {
         static void Main(string[] args)
         {
-            CountDown countDown = new CountDown();
-            MessageFirst messageFirst = new MessageFirst();
-            MessageSecond messageSecond = new MessageSecond();
-            countDown.onCount += messageFirst.Message;
-            countDown.onCount += messageSecond.Message;
-            countDown.Count();
+            Countdown countdown = new Countdown();
+            countdown.CheckPoints += RunHandler;
+            countdown.StartRun += StartHandler;
+            countdown.Run();
+            Console.WriteLine("end");
+
+        }
+        private static void StartHandler(object sender, EventArgs point)
+        {
+            Console.WriteLine("start");
+        }
+        private static void RunHandler(object sender, CheckPoint point)
+        {
+            Console.WriteLine($"{point.Num}");
+            if (point.Num>=70)
+            {
+                point.Flag=true;
+            }
         }
     }
 }
